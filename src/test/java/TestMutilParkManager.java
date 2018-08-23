@@ -19,16 +19,16 @@ public class TestMutilParkManager {
 
 
     @Test
-    public void should_return_car_when_input_a_carNO(){
+    public void should_return_car_when_input_carNO_and_parkingLotName(){
 
         //Given
         String carNO = "粤C123456";
         Car car = new Car();
         car.setCarNO(carNO);
-        ParkManager.park(car);
+        String parkingLotName = MutilParkManager.park(car);
 
         //When
-        Car retCar = ParkManager.take(carNO);
+        Car retCar = MutilParkManager.take(carNO,parkingLotName);
 
         //Then
         Assert.assertNotNull(retCar);
