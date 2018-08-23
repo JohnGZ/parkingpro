@@ -1,0 +1,19 @@
+Given
+When
+Then
+
+
+1) Park
+
+Given a car number
+When parking
+Then park successfully
+
+2) Pick up
+
+Given a car number
+When picking up
+Then pick up successfully
+
+
+
