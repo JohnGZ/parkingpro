@@ -4,7 +4,7 @@ import org.junit.Test;
 public class TestMutilParkManager {
 
     @Test
-    public void should_return_parkinglot_name_when_park_a_car(){
+    public void should_return_parking_lot_0_when_park_a_car(){
 
         //Given
         Car car = new Car();
@@ -15,6 +15,28 @@ public class TestMutilParkManager {
 
         //Then
         Assert.assertNotNull(parkingLotName);
+        Assert.assertEquals("parking lot 0", parkingLotName);
+    }
+
+    @Test
+    public void should_return_null_when_park_car(){
+
+        //Given
+
+        Car car = new Car();
+        car.setCarNO("粤C123456");
+        Car car1 = new Car();
+        car.setCarNO("粤C654321");
+        Car car2 = new Car();
+        car.setCarNO("粤Cd459821");
+        MutilParkManager.park(car);
+        MutilParkManager.park(car1);
+
+        //When
+        String parkingLotName = MutilParkManager.park(car2);
+
+        //Then
+        Assert.assertNull(parkingLotName);
     }
 
 

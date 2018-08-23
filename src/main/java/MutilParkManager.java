@@ -7,7 +7,7 @@ public class MutilParkManager {
     public static List<ParkingLot> parkingLots = new ArrayList<>();
 
     static{
-        for(int i = 0; i < 3 ; i++){
+        for(int i = 0; i < 2 ; i++){
             ParkingLot parkingLot = new ParkingLot();
             parkingLot.setName("parking lot " + i);
             parkingLot.setMax_space(1);
