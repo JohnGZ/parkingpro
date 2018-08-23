@@ -19,17 +19,32 @@ public class TestParkManager {
     }
 
     @Test
-    public void should_return_message_success_when_take_a_car(){
+    public void should_return_car_when_input_a_carNO(){
 
         //Given
+        String carNO = "粤C123456";
         Car car = new Car();
-        car.setCarNO("粤C123456");
+        car.setCarNO(carNO);
         ParkManager.park(car);
 
         //When
-        String message = ParkManager.take(car);
+        Car retCar = ParkManager.take(carNO);
 
         //Then
-        Assert.assertEquals("success", message);
+        Assert.assertNotNull(retCar);
+        Assert.assertEquals(carNO, retCar.getCarNO());
+    }
+
+    @Test
+    public void should_return_null_when_input_a_nonexistent_carNO(){
+
+        //Given
+        String carNO = "粤C123456";
+
+        //When
+        Car retCar = ParkManager.take(carNO);
+
+        //Then
+        Assert.assertNull(retCar);
     }
 }

@@ -1,28 +1,30 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ParkManager {
 
     private static int max_space = 10;
-    private static List<Car> cars = new ArrayList<Car>();
+    private static Map<String,Car> cars = new HashMap<String, Car>();
 
 
     public static String park(Car car){
 
         if(cars.size()<max_space){
-            cars.add(car);
+            cars.put(car.getCarNO(),car);
             return "success";
         }
         return "fail";
     }
 
 
-    public static String take(Car car) {
-        int index = cars.indexOf(car);
-        if (index != -1){
-            cars.remove(car);
-            return "success";
+    public static Car take(String carNO) {
+        Car car = cars.get(carNO);
+        if (car != null){
+            cars.remove(carNO);
+            return car;
         }
-        return "fail";
+        return null;
     }
 }
