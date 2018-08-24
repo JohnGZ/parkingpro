@@ -2,10 +2,10 @@ Given
 When
 Then
 
-
+Park：
 1) Park
 
-Given a car number
+Given a car
 When parking
 Then park successfully
 
@@ -13,7 +13,55 @@ Then park successfully
 
 Given a car number
 When picking up
-Then pick up successfully
+Then pick up car
 
 
+MutilPark:
+1) Park
 
+Given a car
+When parking
+Then return the parklot-name
+
+2) Pick up
+
+Given a car number and parklot-name
+When picking up
+Then pick up car
+
+3) Pick up fail
+
+Given a car number
+When picking up
+Then return null
+
+4) Park fail
+
+Given a car number
+When parking
+Then return null
+
+SmartBoy:
+1) Park
+
+Given a car
+When parking
+Then return the parklot-name
+
+2) Pick up
+
+Given a car number and parklot-name
+When picking up
+Then pick up car
+
+3) Pick up fail
+
+Given a car number
+When picking up
+Then return null
+
+4) Park fail
+
+Given a car number
+When parking
+Then return null
